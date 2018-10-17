@@ -1,0 +1,45 @@
+body {
+    color:white; 
+    font-size: 20px;
+    background-image: url("../images/background.jpg")
+}
+p{
+    margin-left:20px; 
+    margin-bottom:20px; 
+}
+h1 {
+    text-align:right; 
+    margin-right:50px; 
+    margin-top:25px; 
+    font-size:30px;
+    font-weight: 700px; 
+    color: black; 
+}
+.playerContainer {
+    display: inline-block; 
+    position:relative; 
+}
+button {
+    margin-left:20px; 
+    margin-bottom:20px; 
+}
+img {
+    height:150px; 
+    width:150px; 
+    border: 2px solid green;
+    padding: 20px;
+    background-color:white; 
+}
+
+.playerText {
+    position:absolute; 
+    top: 5px;
+    left:65px; 
+    background-color:white; 
+    color:black; 
+    font-size:15px; 
+}
+
+.villanContainer {
+    display:none; 
+}
