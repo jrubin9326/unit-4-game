@@ -6,35 +6,38 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel ="stylesheet" type = "text/css" href = "assets/css/reset.css">
     <link rel="stylesheet" type = "text/css" href = "assets/css/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <title>StarWars RPG Game</title>
 </head>
 <body>
     <h1>Star Wars Challenge!</h1>
         <p>Your Character</p>
-        <div class = "playerContainer">
+    <div class = "heroContainer">
+        <div id = "hanSolo" class = "playerContainer">
             <p class="playerText">Han Solo</p>
             <img src="assets/images/hansolo.jpg">
         </div> 
-        <div class = "playerContainer">
+        <div  id = "lea" class = "playerContainer">
             <p class = "playerText">Princess Lea</p>
             <img class= "playerImage" src="assets/images/lea.jpg">
         </div>
-        <div class = "playerContainer">
-            <p class = "playerText">Old Man</p>
+        <div id = "obi" class = "playerContainer">
+            <p class = "playerText">Obi Wan Kenobi</p>
             <img class = "playerImage" src ="assets/images/olderguy.jpg">
         </div>
-        <div class = "playerContainer">
+        <div id ="r2" class = "playerContainer">
             <p class ="playerText">R2-D2</p>
             <img class = "playerImage" src = "assets/images/r2d2.jpg">
         </div>
+    </div>
 
     <p> Enemies Availbale to Attack</p>
     <div class = "villanContainer">
         <div class = "playerContainer">
-            <p class = "playerText villan">Emperor Palpatine </p>
+            <p id = "emperor" class = "playerText villan">Emperor Palpatine </p>
             <img class = "playerImage" src = "assets/images/emporor.png">
         </div>
-        <div class = "playerContainer">
+        <div id = "darth" class = "playerContainer">
             <p class = "playerText villan">Darth Vader </p>
             <img class = "playerImage" src = "assets/images/darthVader.jpg">
         </div>
@@ -48,7 +51,7 @@
     <p>Fight Section</p>
 
     <button> Attack</button>
-    <p>Defender</p>
+    <p id = "defend">Defender</p>
     <script src = "assets/javascript/game.js"></script>
 </body>
 </html>
