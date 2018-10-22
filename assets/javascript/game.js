@@ -2,22 +2,26 @@ let gameHasStarted = false;
 
  let playerStats = {
     hansolo : {
+        name: "hanSolo",
         health: 180,
         attack:7,
         enemyAttackBack:25
     },
     r2 : {
+        name:"r2",
         health:150,
         attack:8,
         enemyAttackBack:20
    
     },
     obiWan : {
+        name:"obiWan",
         health: 100,
         attack:14,
         enemyAttackBack:15
     },
     princessLea : {
+        name: "princess lea",
         health: 120,
         attack:8,
         enemyAttackBack : 15
@@ -30,7 +34,7 @@ let gameHasStarted = false;
  var gameStarted = false;
  var villanSelected = false; 
  var playerSelected = false; 
-var myCharacter = "";
+var myCharacter = ""
 var myDefender = ""
 var character; 
 var player; 
@@ -39,9 +43,11 @@ var r2
 var obi
 var lea
 var hanSolo
-var attack;
+var fight 
 var health
 var enemyAttack; 
+var enemyHealth; 
+
 
 
 // determines which player moves into my character and which move into fight
@@ -52,7 +58,7 @@ $("#hanSolo").on("click", function() {
         $("#obi").appendTo("#fight");
         $("#r2").appendTo("#fight")
         playerSelected = true; 
-        myChracter = playerStats.hanSolo
+        myChracter = playerStats.hanSolo.name
     }
     if (myCharacter === playerStats.hansolo)
         attack = playerStats.hansolo.attack
@@ -67,11 +73,10 @@ $("#lea").on("click", function() {
         $("#obi").appendTo("#fight");
         $("#r2").appendTo("#fight")
         playerSelected = true;
-        myCharacter = playerStats.princessLea
+        myCharacter = playerStats.princessLea.name
     }if (myCharacter == playerStats.princessLea)
     attack = playerStats.princessLea.attack
     health = playerStats.princessLea.health
-    enemyAttack = playerStats.princessLea.enemyAttackBack
 })
 
 $("#obi").on("click", function() {
@@ -81,12 +86,11 @@ $("#obi").on("click", function() {
         $("#hanSolo").appendTo("#fight");
         $("#r2").appendTo("#fight")
         playerSelected = true; 
-        myCharacter = playerStats.obiWan
+        myCharacter = playerStats.obiWan.name
     }
     if (myCharacter === playerStats.obiWan)
         attack = playerStats.obiWan.attack
         health = playerStats.obiWan.health
-        enemyAttack = playerStats.obiWan.enemyAttackBack
 })
 
 $("#r2").on("click", function() {
@@ -97,24 +101,61 @@ $("#r2").on("click", function() {
         $("#hanSolo").appendTo("#fight")
         playerSelected = true; 
         console.log(playerSelected)
-        myCharcter = playerStats.r2
+        myCharacter = playerStats.r2.name
+        console.log(myCharacter)
     }
-    if (myCharacter == playerStats.r2)
-        attack = playerStats.r2.attack
+    if (myCharacter == playerStats.r2.name)
         health = playerStats.r2.health
-        enemyAttack = playerStats.r2.enemyAttackBack
+        fight = playerStats.r2.attack; 
+        console.log(health, fight)
     
 })
 
 //move characters from enemies to defender 
 
-if (playerSelected == true) {
+if (playerSelected === true && myCharacter === playerStats.r2.name) {
     $("#hanSolo").on("click", function(){
-        myDefender = $(this)
-        $(myDefender).appendTo("#Defender")
+        myDefender = playerStats.hansolo.name
+        console.log(myDefender)
+        // enemyHealth = playerStats.hansolo.health
+        // enemyAttack = playerStats.hansolo.enemyAttackBack
+        // $(myDefender).appendTo("#Defender")
+        console.log(myCharacter)
  })
-}
 
+} 
+
+var r2HP = $(".playerHealthr2")
+var soloHP = $(".playerHealthSolo")
+var leaHP = $(".playerHealthLea")
+var obiHP = $(".playerHealthObi")
+var playerHP;
+var defenderHP
+// when attack button is pressed deduct health from player and defender
+$("button").on("click", function(){
+    if (myDefender === playerStats.hansolo && myCharacter == playerStats.r2.name) {
+        playerHP = health - enemyAttack
+        $(r2HP).text(playerHP)
+        defenderHP = enemyHealth - attack; 
+        if (playerHP < 0) {
+            $(".myChar").text("you are defeated")
+        }
+    } else if (myDefender === playerStats.princessLea && myCharacter === playerStats.r2.name) {
+        playerHP = health - enemyAttack
+        $(r2HP).text(playerHP)
+        defenderHP = enemyHealth - attack; 
+        if (playerHP < 0) {
+            $(".myChar").text("you are defeated")
+        }
+    } else if (myDefender === playerStats.obiWan && myCharacter === playerStats.r2.name) {
+        playerHP = health - enemyAttack
+        $(r2HP).text(playerHP)
+        defenderHP = enemyHealth - attack; 
+        if (playerHP < 0) {
+            $(".myChar").text("you are defeated")
+        }
+    }
+})
 
 
 

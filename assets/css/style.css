@@ -39,12 +39,36 @@ img {
     color:black; 
     font-size:15px; 
 }
-.playerHealth {
+.playerHealthr2 {
     position:absolute; 
     bottom:-10px;
     left:70px; 
     color:black; 
     font-size:15px;
+}
+
+.playerHealthLea {
+        position:absolute; 
+        bottom:-10px;
+        left:70px; 
+        color:black; 
+        font-size:15px;
+}
+.playerHealthObi {
+        position:absolute; 
+        bottom:-10px;
+        left:70px; 
+        color:black; 
+        font-size:15px;
+    
+}
+
+.playerHealthSolo {
+        position:absolute; 
+        bottom:-10px;
+        left:70px; 
+        color:black; 
+        font-size:15px;
 }
 .villanContainer {
     display:none; 
