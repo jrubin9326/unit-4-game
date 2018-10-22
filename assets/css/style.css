@@ -39,7 +39,17 @@ img {
     color:black; 
     font-size:15px; 
 }
-
+.playerHealth {
+    position:absolute; 
+    bottom:-10px;
+    left:70px; 
+    color:black; 
+    font-size:15px;
+}
 .villanContainer {
     display:none; 
+    
+}
+img .villanContainer {
+    background-color:red; 
 }
